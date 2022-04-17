@@ -1,5 +1,4 @@
-name: Building recovery
-
+name: Building shrpk33k
 on:
 #  release:
 #    types: [published]
@@ -14,13 +13,13 @@ on:
     types: [started]
 
 env:
-MANIFEST: https://github.com/SHRP/manifest.git
-MANIFEST_BRANCH: v3_10.0
-DEVICE: TECNO_CD8j
-DT_LINK: https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE.git
-DT_PATH: device/tecno/TECNO_CD8j
-TARGET: recoveryimage
-TZ: Asia/Kolkata
+  MANIFEST: https://github.com/SHRP/manifest.git
+  MANIFEST_BRANCH: v3_10.0
+  DEVICE: TECNO_CD8j
+  DT_LINK: https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE.git
+  DT_PATH: device/xiaomi/TECNO_CD8j
+  TARGET: recoveryimage
+  TZ: Asia/Kolkata
 
 jobs:
   build:
@@ -52,11 +51,12 @@ jobs:
              repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
+   
              
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              . build/envsetup.sh &&lunch twrp_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && rm -rf .repo && mka $TARGET
              
        - uses: actions/upload-artifact@v2
          with:
