@@ -15,9 +15,9 @@ on:
 
 env:
 MANIFEST: https://github.com/SHRP/manifest.git
- MANIFEST_BRANCH: v3_10.0
- DEVICE: TECNO_CD8j
- DT_LINK: https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE.git
+MANIFEST_BRANCH: v3_10.0
+DEVICE: TECNO_CD8j
+DT_LINK: https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE.git
 DT_PATH: device/tecno/TECNO_CD8j
 TARGET: recoveryimage
 TZ: Asia/Kolkata
