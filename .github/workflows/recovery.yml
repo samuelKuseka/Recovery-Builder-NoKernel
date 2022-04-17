@@ -15,12 +15,12 @@ on:
 
 env:
  MANIFEST: git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git
-  MANIFEST_BRANCH:android-9.0
-  DEVICE:TECNO_CD8j
-  DT_LINK:https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE
-  DT_PATH:device/tecno/TECNO_CD8j
-  TARGET:recoveryimage
-  TZ:Asia/Kolkata
+ MANIFEST_BRANCH: android-9.0
+ DEVICE: TECNO_CD8j
+DT_LINK: https://github.com/samuelKuseka/TECNO-CD8J-RECOVERY-TREE
+DT_PATH: device/tecno/TECNO_CD8j
+TARGET: recoveryimage
+  TZ: Asia/Kolkata
 
 jobs:
   build:
